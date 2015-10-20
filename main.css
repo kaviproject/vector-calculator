@@ -1,0 +1,19 @@
+.panel
+{
+	background-color: #eee !important;
+	border:3px solid !important;
+}
+.panel-default
+{
+	border-color: white !important;
+}
+@media screen and (min-width: 768px)
+.jumbotron
+{
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+.col-sm-4
+{
+	text-align: right !important;
+}
