@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript" srsc="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="vectorCtrl.js"></script>
+</head>
+
+<body ng-controller="vectorCtrl">
+    <p></p>
+    <div class="container">
+        <div class="jumbotron">
+            <h3 style="text-align:center">Vector Calculation</h3>
+            <p></p>
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <form class="form-inline">
+                        <label for="text" class="col-sm-4">Minimum Value:</label>
+                        <div class="col-sm-8">
+
+                            <input type="number" class="form-control" ng-model="min" ng-pattern="/^\d+$/" placeholder="ex:  2,4.."/>
+                        </div>
+                    </form>
+                    <div>&nbsp;</div>
+
+                    <form class="form-inline">
+                        <label for="text" class="col-sm-4">Spacing Value:</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" ng-model="spacing" ng-pattern="/^\d+$/" placeholder="ex: 2,4..">
+                        </div>
+                    </form>
+                    <div>&nbsp;</div>
+                    <form class="form-inline">
+                        <label for="text" class="col-sm-4">Number of Elements:</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" ng-model="elements" ng-pattern="/^\d+$/" placeholder="ex: 2,4..">
+                        </div>
+                    </form>
+                    <div>&nbsp;</div>
+
+                    <div class="row" style="text-align:center !important">
+                        <a class="btn btn-primary btn-sm" role="button" ng-click="result()">Vector Generation</a>&nbsp;&nbsp;
+                        <a class="btn btn-primary btn-sm" role="button" ng-click="resetvector()">Reset Values</a>
+                    </div>
+                    <div>&nbsp;</div>
+
+                    <form class="form-inline">
+                        <label for="text" class="col-sm-4">Vector Generation:</label>
+                        <div class="col-sm-8">
+                            {{vgnrate}}
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-inline">
+                        <label for="text" class="col-sm-4">Enter the Equation:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" ng-model="vectordisplay" placeholder="ex:  (sqrt(x+2))">
+                        </div>
+                    </form>
+                    <div>&nbsp;</div>
+                    <div class="row" style="text-align:center !important">
+                        <a class="btn btn-primary btn-sm" role="button" ng-click="addExp(vectordisplay)" value="Total Amount">Generate Result</a>&nbsp;&nbsp;
+                        <a class="btn btn-primary btn-sm" role="button" ng-click="reset()">Reset Equation</a>
+                    </div>
+                    <div>&nbsp;</div>
+                    <form class="form-inline">
+                        <label for="text" class="col-sm-4">Output:</label>
+                        <div class="col-sm-8">
+                            {{outputData}}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
